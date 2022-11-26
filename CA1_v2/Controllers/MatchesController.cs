@@ -18,7 +18,7 @@ namespace CA1_v2.Controllers
         // GET: MatchesController
         public ActionResult Index()
         {
-            return View();
+            return View(_repo);
         }
 
         // GET: MatchesController/Details/5
