@@ -65,10 +65,11 @@ namespace CA1_v2.Controllers
         // POST: MatchesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Match m)
         {
             try
             {
+                _repo.EditFixture(m);
                 return RedirectToAction(nameof(Index));
             }
             catch
