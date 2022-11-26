@@ -1,10 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CA1_v2.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CA1_v2.Controllers
 {
     public class MatchesController : Controller
     {
+        IMatchRepo _repo;
+
+        public MatchesController(IMatchRepo repo)
+        {
+            _repo = repo;
+        }
+
+
         // GET: MatchesController
         public ActionResult Index()
         {
