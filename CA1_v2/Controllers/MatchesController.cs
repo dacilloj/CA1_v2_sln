@@ -58,7 +58,8 @@ namespace CA1_v2.Controllers
         // GET: MatchesController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var match = _repo.GetFixture(id);
+            return View(match);
         }
 
         // POST: MatchesController/Edit/5
