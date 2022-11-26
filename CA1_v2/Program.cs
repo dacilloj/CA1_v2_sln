@@ -31,7 +31,7 @@ namespace CA1_v2
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Matches}/{action=Index}/{id?}");
 
             app.Run();
         }
