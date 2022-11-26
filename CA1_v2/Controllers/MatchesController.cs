@@ -1,4 +1,5 @@
-﻿using CA1_v2.Repository;
+﻿using CA1_v2.Models;
+using CA1_v2.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,11 +36,18 @@ namespace CA1_v2.Controllers
         // POST: MatchesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Match m)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if(ModelState.IsValid)
+                {
+                    _repo.CreateFixture(m);
+                    return RedirectToAction(nameof(Index));
+
+                }
+                return View();
+                
             }
             catch
             {
