@@ -18,7 +18,8 @@ namespace CA1_v2.Controllers
         // GET: MatchesController
         public ActionResult Index()
         {
-            return View(_repo);
+            var matches = _repo.GetFixtures();
+            return View(matches);
         }
 
         // GET: MatchesController/Details/5
