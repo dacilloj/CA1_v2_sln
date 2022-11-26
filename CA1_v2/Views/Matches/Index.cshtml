@@ -56,8 +56,8 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new {id = item.MatchID /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { item.MatchID /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { item.MatchID /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Details", "Details", new { item.MatchID /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { item.MatchID /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }
