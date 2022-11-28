@@ -2,6 +2,7 @@
 using CA1_v2.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CA1_v2.Controllers
 {
@@ -22,11 +23,17 @@ namespace CA1_v2.Controllers
             return View(matches);
         }
 
-        // GET: MatchesController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult GetStats()
         {
-            return View();
+            Stats allMatches = new Stats(_repo);
+            return View(allMatches);
         }
+
+        // GET: MatchesController/Details/5
+        //public ActionResult Details(int id)
+        //{
+        //    return View();
+        //}
 
         // GET: MatchesController/Create
         public ActionResult Create()
